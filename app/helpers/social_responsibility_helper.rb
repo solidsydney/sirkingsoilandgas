@@ -1,0 +1,2 @@
+module SocialResponsibilityHelper
+end

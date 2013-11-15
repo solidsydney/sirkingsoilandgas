@@ -1,0 +1,2 @@
+module LpgsHelper
+end

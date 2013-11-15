@@ -1,0 +1,35 @@
+<div class="bs-header" id="content">
+  <div class="container">
+    <h1><%= @news.title %> </h1>
+    <p><%= truncate(@news.news_content) %> </p>
+
+  </div>
+</div>
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-4">
+      <%= image_tag @news.photo.url(:medium) %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-8">
+      <p id="notice"><%= notice %></p>
+
+      <p>
+
+      </p>
+
+      <p>
+        <strong>News content:</strong>
+        <%= @news.news_content %>
+      </p>
+
+      <p>
+        <strong>External link:</strong>
+        <a href="<%= @news.external_link %>" target="_blank"> <%= @news.external_link %> </a>
+      </p>
+    </div>
+  </div>
+
+    <%= link_to 'Back', news_path %>
+</div>

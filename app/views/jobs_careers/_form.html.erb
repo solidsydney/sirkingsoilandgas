@@ -1,0 +1,88 @@
+<div class="container">
+<%= form_for(@jobs_career) do |f| %>
+  <% if @jobs_career.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jobs_career.errors.count, "error") %> make sure the information you are supplying are in the correct format </h2>
+
+      <ul>
+      <% @jobs_career.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="row" style="margin-bottom: 15px;">
+      <div class="col-lg-4">
+       <%= f.text_field :surname, :class => "form-control", :placeholder => "Enter Your Surname" %>
+      </div>
+      <div class="col-lg-4">
+        <%= f.text_field :middle_name, :class => "form-control", :placeholder => "Enter Your Surname " %>
+      </div>
+      <div class="col-lg-4">
+        <%= f.text_field :first_name, :class => "form-control", :placeholder => "Enter Your Surname" %>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 15px;">
+      <div class="col-lg-2">
+        <label>Prefix:</label> <%= f.select :prefix, [["Mr", "Mr"], ["Mrs", "Mrs"], ["Miss", "Miss"], ["Dr", "Dr"]], :class => "form-control" %>
+      </div>
+      <div class="col-lg-4">
+        <%= f.text_field :position_applied_for, :class => "form-control", :placeholder => "Position Applied For" %>
+      </div>
+      <div class="col-lg-4">
+        <%= f.text_field :qulification, :class => "form-control", :placeholder => "qualification" %>
+      </div>
+    </div>
+
+      <div class="row" style="margin-bottom: 15px;">
+        <div class="col-lg-4">
+          <%= f.text_field :email, :class => "form-control", :placeholder => "Enter Your Email" %>
+        </div>
+        <div class="col-lg-4">
+          <%= f.text_field :sex, :class => "form-control", :placeholder => "Enter Your Sex" %>
+        </div>
+        <div class="col-lg-4">
+          <label>Date of Birth: </label> <%= f.date_select :date_of_birth, :class => "form-control" %>
+        </div>
+      </div>
+
+
+      <div class="row" style="margin-bottom: 15px;">
+        <div class="col-lg-4">
+          <%= f.text_field :country, :class => "form-control", :placeholder => "Enter Your Country" %>
+        </div>
+        <div class="col-lg-4">
+          <%= f.text_field :state, :class => "form-control", :placeholder => "Enter Your state" %>
+        </div>
+        <div class="col-lg-4">
+          <%= f.text_field :contact_address, :class => "form-control", :placeholder => "Enter Your Address" %>
+        </div>
+      </div>
+
+      <div class="row" style="margin-bottom: 15px;">
+        <div class="col-lg-4">
+          <%= f.text_field :proposed_pay, :class => "form-control", :placeholder => "Enter Your proposed pay" %>
+        </div>
+        <div class="col-lg-4">
+          <%= f.text_field :portfolio_function, :class => "form-control", :placeholder => "portfolio function" %>
+        </div>
+        <div class="col-lg-4">
+          <%= f.text_area :self_description, :class => "form-control", :placeholder => "Describe yourself" %>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 15px;">
+        <div class="col-lg-4">
+          Upload Your CV (*.pdf only)
+          <%= f.file_field :cv, :class => "form-control" %>
+        </div>
+        <div class="col-lg-4">
+          <p>Attach an essay of your plan for SirKings in the next five years (*.pdf only) </p><%= f.file_field :plan, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="actions">
+        <%= f.submit "Submit" %>
+      </div>
+    <% end %>
+</div>

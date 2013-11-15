@@ -1,0 +1,35 @@
+<h1>Listing lpgs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full name</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>State</th>
+      <th>City</th>
+      <th>Lga</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lpgs.each do |lpg| %>
+      <tr>
+        <td><%= lpg.full_name %></td>
+        <td><%= lpg.email %></td>
+        <td><%= lpg.username %></td>
+        <td><%= lpg.state %></td>
+        <td><%= lpg.city %></td>
+        <td><%= lpg.lga %></td>
+        <td><%= lpg.description %></td>
+        <td><%= link_to 'Show', lpg %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

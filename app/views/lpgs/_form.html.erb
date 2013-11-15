@@ -1,0 +1,50 @@
+<%= form_for(@lpg) do |f| %>
+  <% if @lpg.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lpg.errors.count, "error") %> prohibited this lpg from being saved:</h2>
+
+      <ul>
+      <% @lpg.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :full_name %><br>
+    <%= f.text_field :full_name, :class => "form-control"  %>
+  </div>
+  <div class="field">
+    <%= f.label :email %> <span class="asterik">*</span> <br>
+    <%= f.email_field :email, :class => "form-control"  %>
+  </div>
+  <div class="field">
+    <%= f.label :username %> <span class="asterik">*</span> <br>
+    <%= f.text_field :username, :class => "form-control"  %>
+  </div>
+  <div class="field">
+    <%= f.label :state %> <span class="asterik">*</span> <br>
+    <%= f.text_field :state, :class => "form-control"  %>
+  </div>
+  <div class="field">
+    <%= f.label :city %> <span class="asterik">*</span> <br>
+    <%= f.text_field :city, :class => "form-control"  %>
+  </div>
+  <div class="field">
+    <%= f.label :lga %> <span class="asterik">*</span> <br>
+    <%= f.text_field :lga, :class => "form-control"  %>
+  </div>
+  <div class="field">
+    <%= f.label :description %> <span class="asterik">*</span> <br>
+    <%= f.text_area :description, :class => "form-control"  %>
+  </div>
+    <div class="field">
+      <label>Verify that you are human: </label><br />
+      <%= recaptcha_tags %>
+
+    </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

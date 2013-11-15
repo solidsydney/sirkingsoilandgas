@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @lpg.full_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @lpg.email %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @lpg.username %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @lpg.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @lpg.city %>
+</p>
+
+<p>
+  <strong>Lga:</strong>
+  <%= @lpg.lga %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @lpg.description %>
+</p>
+
+<%= link_to 'Edit', edit_lpg_path(@lpg) %> |
+<%= link_to 'Back', lpgs_path %>

@@ -1,0 +1,37 @@
+<div class="bs-header" id="content">
+  <div class="container">
+    <h1> Schools Voted for </h1>
+    <p> </p>
+
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>State</th>
+      <th>Lga</th>
+      <th>Project title</th>
+      <th>Project description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.name %></td>
+        <td><%= school.state %></td>
+        <td><%= school.lga %></td>
+        <td><%= school.project_title %></td>
+        <td><%= school.project_description %></td>
+        <td><%= link_to 'Show', school %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

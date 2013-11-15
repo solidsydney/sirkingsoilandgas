@@ -1,0 +1,39 @@
+<%= form_for(@school) do |f| %>
+  <% if @school.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@school.errors.count, "error") %> prohibited this school from being saved:</h2>
+
+      <ul>
+      <% @school.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %> <span class="asterik">*</span> <br>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :state %> <span class="asterik">*</span><br>
+    <%= f.text_field :state, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :lga %> <span class="asterik">*</span> <br>
+    <%= f.text_field :lga, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :project_title %> <span class="asterik">*</span> <br>
+    <%= f.text_field :project_title, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :project_description %> <span class="asterik">*</span> <br>
+    <%= f.text_area :project_description, :class => "form-control" %>
+  </div>
+    <br />
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

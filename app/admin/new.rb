@@ -1,4 +1,9 @@
 ActiveAdmin.register New do
+  index do
+    column :title
+    column :external_link
+    default_actions
+  end
 
 
   form :html => { :enctype => "multipart/form-data" } do |f|

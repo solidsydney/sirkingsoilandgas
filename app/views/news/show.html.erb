@@ -7,29 +7,17 @@
 </div>
 <div class="container">
 
-  <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-4">
-      <%= image_tag @news.photo.url(:medium) %>
+  <div class="row featurette">
+    <div class="col-md-5">
+      <%= image_tag @news.photo, :class => "featurette-image img-responsive" %>
+    </div>
+    <div class="col-md-7">
+      <h2 class=""><%= @news.title %><span class="text-muted"><a href="<%= @news.external_link %>" target="_blank"> <%= @news.external_link %> </a></span></h2>
+      <p class="lead"><%= @news.news_content %></p>
     </div>
 
-    <div class="col-xs-12 col-sm-6 col-md-8">
-      <p id="notice"><%= notice %></p>
-
-      <p>
-
-      </p>
-
-      <p>
-        <strong>News content:</strong>
-        <%= @news.news_content %>
-      </p>
-
-      <p>
-        <strong>External link:</strong>
-        <a href="<%= @news.external_link %>" target="_blank"> <%= @news.external_link %> </a>
-      </p>
-    </div>
   </div>
-
-    <%= link_to 'Back', news_path %>
+    <br />
+    <%= link_to 'Back', news_path, :class => "btn btn-primary" %>
 </div>
+<br>

@@ -9,7 +9,7 @@
       <div class="container">
         <div class="carousel-caption">
           <h1> Refineries .</h1>
-          <p> this place will have contents </p>
+          <p> Properly and well refined products </p>
         </div>
       </div>
     </div>
@@ -18,16 +18,16 @@
       <div class="container">
         <div class="carousel-caption">
           <h1>  Oil Trucks .</h1>
-          <p> here too.</p>
+          <p> No matter the Quantity you desire.</p>
         </div>
       </div>
     </div>
     <div class="item">
-      <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Third slide" alt="Third slide">
+      <%= image_tag "fs.jpg" %>
       <div class="container">
         <div class="carousel-caption">
-          <h1>One more for good measure.</h1>
-          <p> other contents too goes here. </p>
+          <h1>Filling Stations .</h1>
+          <p> Some of our LPGs (Selling Points). </p>
         </div>
       </div>
     </div>
@@ -36,18 +36,37 @@
   <a class="right carousel-control" href="index.html#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div><!-- /.carousel -->
 
-<div class="container bgbody">
+<div class="container">
+
 
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-9">
-         this is to test the actual result of my coding thanks guys
-      Toggleable, contextual menu for displaying lists of links. Made interactive with the dropdown JavaScript plugin.
+      <div class="row">
+        <div class="col-lg-4">
+          <%= image_tag "oag.png", :style => "height:140px; width: 140px;", :class => "img-circle" %>
+          <h2>Oil &amp; Gas </h2>
+          <p>We provide oil and gas to any part of the country on order in any quantity ordered by our client. we do this so efficient that our delivery is commended by all our clients. </p>
+          <p><a class="btn btn-default" href="<%= products_index_path %>">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <%= image_tag "sr.png", :class => "img-circle", :style => "height:140px; width: 140px;" %>
+          <h2> Social Responsibilities </h2>
+          <p>We make sure that we impact in a positive way on schools that needs us the most by allowing people to vote for the school in which they feel that our help is needed the most... .</p>
+          <p><a class="btn btn-default" href="<%= social_responsibility_index_path %>">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <%= image_tag "jobs.jpg", :class => "img-circle", :style => "height:140px; width: 140px;" %>
+          <h2> Job Opportunities </h2>
+          <p>Here in Sirkings oil and gas, we employ young and talented individual who are driven by passion to fufil their desires .</p>
+          <p><a class="btn btn-default" href="<%= new_jobs_career_path %>">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
-      Example
-      Wrap the dropdown's trigger and the dropdown menu within .dropdown, or another element that declares position: relative;. Then add the menu's HTML.
+
+
 
     </div>
-    <div class="col-xs-6 col-sm-6 col-md-3">
+    <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="news-feed">
           <% if @news.empty? %>
           <P>no news available for this region now </P>
@@ -57,11 +76,12 @@
                 <% for new in @news %>
                     <a href="<%= news_path(new) %>">
                    <div>
-                      <%= image_tag new.photo.url(:thumb) %>
-                      <%= new.title %>
+                     <%= image_tag new.photo.url(:thumb), :class => "pull-left" %>
+                     <span style="font-weight: bold;"> <%= new.title %> </span> <br />
                      <span> <%= truncate(new.news_content) %> </span>
+
                    </div>
-                    </a>
+                    </a> <br />
                 <% end %>
               </div>
           <% end %>

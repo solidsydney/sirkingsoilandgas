@@ -39,6 +39,9 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 
 #for verification
 gem 'recaptcha'
+#using country-select
+#gem 'country-select'
+gem 'kaminari'
 
 
 # Use ActiveModel has_secure_password

@@ -17,10 +17,10 @@
        <%= f.text_field :surname, :class => "form-control", :placeholder => "Enter Your Surname" %>
       </div>
       <div class="col-lg-4">
-        <%= f.text_field :middle_name, :class => "form-control", :placeholder => "Enter Your Surname " %>
+        <%= f.text_field :middle_name, :class => "form-control", :placeholder => "Enter Your middle name " %>
       </div>
       <div class="col-lg-4">
-        <%= f.text_field :first_name, :class => "form-control", :placeholder => "Enter Your Surname" %>
+        <%= f.text_field :first_name, :class => "form-control", :placeholder => "Enter Your first name " %>
       </div>
     </div>
 
@@ -44,8 +44,16 @@
           <%= f.text_field :sex, :class => "form-control", :placeholder => "Enter Your Sex" %>
         </div>
         <div class="col-lg-4">
-          <label>Date of Birth: </label> <%= f.date_select :date_of_birth, :class => "form-control" %>
+          <%= f.text_field :date_of_birth, :class => "form-control", :id => "dob", :placeholder => "Select your date of birth" %>
         </div>
+        <script>
+          $(function() {
+              $('#dob').on('click', function (){
+                  $(this).datepicker('setDate', new Date());
+              });
+          })
+
+        </script>
       </div>
 
 
